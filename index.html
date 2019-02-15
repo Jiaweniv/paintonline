@@ -163,9 +163,9 @@
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
                     if(!isMobile)
-                        game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
+                        game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'game');
                     else
-                        game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
+                        game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'game');
                     game.state.add('Boot', BasicGame.Boot);
                     game.state.add('Preloader', BasicGame.Preloader);
                     game.state.add('MainMenu', BasicGame.MainMenu);
@@ -190,9 +190,9 @@
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
                     if(!isMobile)
-                        game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
+                        game = new Phaser.Game(window.innerWidth * gameRatio, window.innerHeight, Phaser.AUTO, 'game');
                     else
-                        game = new Phaser.Game(600 * gameRatio, 600, Phaser.CANVAS, 'game');
+                        game = new Phaser.Game(window.innerWidth * gameRatio, window.innerHeight, Phaser.CANVAS, 'game');
                     game.state.add('Boot', BasicGame.Boot);
                     game.state.add('Preloader', BasicGame.Preloader);
                     game.state.add('MainMenu', BasicGame.MainMenu);
