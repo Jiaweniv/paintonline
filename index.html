@@ -118,6 +118,11 @@
 
             isMobile = !!uAg.match(/android|iphone|Windows Phone|ipad|touch|kbd|iemobile|bb10|ipod|blackberry|symbianos|Maple 5.0.0 Navi|tv|viera/i);
 
+            
+            if(isMobile){
+                    alert("请在电脑端浏览器访问~~")
+                    return false;
+                }  
             function msieversion() {
 
                 var ua = window.navigator.userAgent;
@@ -157,11 +162,7 @@
     <script>
             juegoCargado = false;
             window.onload = function () {
-                var gameRatio = window.innerWidth / window.innerHeight;
-                if(isMobile){
-                    alert("请在电脑端浏览器访问~~")
-                    return false;
-                }   
+                var gameRatio = window.innerWidth / window.innerHeight; 
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
                     if(!isMobile)
