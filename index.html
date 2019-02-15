@@ -158,6 +158,10 @@
             juegoCargado = false;
             window.onload = function () {
                 var gameRatio = window.innerWidth / window.innerHeight;
+                if(isMobile){
+                    alert("请在电脑端浏览器访问~~")
+                    return false;
+                }   
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
                     if(!isMobile)
