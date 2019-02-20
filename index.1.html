@@ -1,12 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <script>
+        </script>
+        <script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>paintonline</title>
-    <script>
             if (!console)
                 console = {log: function () {
                     }};
@@ -34,56 +33,71 @@
             }
         </script>
 
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        /* Change orientation notice START */
-        #changeOrientation {
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            background-color: #000000;
-            z-index: 30000;
-            text-align: center;
-            line-height: 110%;
-            display: none;
-        }
+        <style type="text/css">
 
-        #changeOrientationContent {
-            display: table;
-            width: 100%;
-            height: 100%;
-        }
+            *{
 
-        #changeOrientationContentInner {
-            display: table-cell;
-            vertical-align: middle;
-        }
+                margin: 0;
 
-        #changeOrientationIcon {
-            width: 260px;
-            height: 221px;
-            margin: 0 auto 20px auto;
-            background: url("assets/changeOrientationIcon.png") no-repeat center center;
-            background-size: contain;
-        }
+                padding: 0;	
 
-        /* Change orientation notice END */
-
-        @media screen and (orientation:portrait) {
-            #changeOrientation {
-                display: block;
             }
-        }
-    </style>
 
-    <script src="src/phaser.min.js"></script>
 
-    <script type="text/javascript">
+
+            /* Change orientation notice START */
+
+            #changeOrientation{position: fixed;top: 0px;left: 0px;right: 0px;bottom: 0px;background-color: #000000;z-index: 30000;text-align: center;line-height: 110%; display: none;}
+
+            #changeOrientationContent{display: table; width: 100%; height: 100%;}
+
+            #changeOrientationContentInner{ display: table-cell;vertical-align: middle;}
+
+            #changeOrientationIcon{width: 260px; height: 221px; margin: 0 auto 20px auto;background: url( "assets/changeOrientationIcon.png" ) no-repeat center center;background-size: contain;}
+
+            /* Change orientation notice END */
+
+            @media screen and (orientation:portrait) {
+                #changeOrientation {display: block;}
+            }
+
+            /*
+
+            @media only screen 
+
+            and (max-width : 320px) {
+
+                    #changeOrientation {display: block;}
+
+            }
+
+
+
+
+
+            @media only screen 
+
+            and (min-device-width : 768px) 
+
+            and (max-device-width : 1024px) 
+
+            and (orientation : portrait) {
+
+                    #changeOrientation {display: block;}
+
+            }
+            */
+        </style>
+
+
+
+    </head>
+
+    <body>
+
+        <script src="src/phaser.min.js"></script>
+
+        <script type="text/javascript">
 
             isMobile = false;
 
@@ -96,13 +110,11 @@
                 var ua = window.navigator.userAgent;
                 var msie = ua.indexOf("MSIE ");
 
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-                    // If Internet Explorer, return version number
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
                     return true;
-                }else{
-                    // If another browser, return 0
+                else                 // If another browser, return 0
                     return false;
-                }           
+
                 return false;
             }
 
@@ -117,42 +129,82 @@
             carpeta = 'assets';
 
         </script>
-    <script src="src/jquery.min.js" type="text/javascript"></script>
-    <script src="src/particle-storm.min.js" type="text/javascript"></script>
-    <script src="src/FileSaver.min.js"></script>
-    <script src="src/canvas-toBlob.js"></script>
-    <script src="src/Boot.js"></script>
-    <script src="src/Preloader.js"></script>
-    <script src="src/MainMenu.js"></script>
-    <script src="src/Game.js"></script>
-</head>
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="src/phaser.min.js"></script>
+        <script src="src/particle-storm.min.js" type="text/javascript"></script>
+        <script src="src/FileSaver.min.js"></script>
+        <script src="src/canvas-toBlob.js"></script>
+        <script src='http://connect.facebook.net/en_US/all.js'></script>
+         <script src="src/flood.js"></script>
+        <script type="text/javascript"> </script>
+        <script src="src/Boot.js"></script>
+        <script src="src/Preloader.js"></script>
+        <script src="src/MainMenu.js"></script>
+        <script src="src/Game.js"></script>
+        <div id="changeOrientation"><div id="changeOrientationContent"><div id="changeOrientationContentInner"><div id="changeOrientationContentInnerInner"><div id="changeOrientationIcon"></div></div></div></div></div>
+        <script>
 
-<body>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '492802060845095',
+              xfbml      : true,
+              version    : 'v2.5'
+            });
+          };
 
-    <script>
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+
+            $( document ).ready(function() {
+
+
+
+
+                    
+            });
+
+        </script>
+
+
+
+        <script>
+
+
+
             juegoCargado = false;
             window.onload = function () {
-                var gameRatio = window.innerWidth / window.innerHeight; 
+                var gameRatio = window.innerWidth / window.innerHeight;
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
-                    console.log(definicion);
                     if(!isMobile)
                         game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
                     else
                         game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
+                    //   else
+                    //         game = new Phaser.Game(320 * gameRatio, 320, Phaser.AUTO, 'game');
+                    console.log(definicion);
                     game.state.add('Boot', BasicGame.Boot);
+                    //game.state.add('NanoImagen', BasicGame.NanoImagen);
                     game.state.add('Preloader', BasicGame.Preloader);
+
                     game.state.add('MainMenu', BasicGame.MainMenu);
                     game.state.add('SelectCar', BasicGame.SelectCar);
                     game.state.add('Niveles', BasicGame.Niveles);
                     game.state.add('Game', BasicGame.Game);
                     game.state.start('Boot');
-                }else{
-                    alert("请在电脑端用浏览器访问~~")
                 }
 
             };
+
+
             window.addEventListener("resize", function () {
+                // Get screen size (inner/outerWidth, inner/outerHeight)
                 if (!juegoCargado) {
                     myVar = setTimeout(cargarJuego, 100);
                 }
@@ -161,24 +213,32 @@
 
             function cargarJuego() {
                 var gameRatio = window.innerWidth / window.innerHeight;
+                //  if(window.innerWidth>1000){
+
+
+                //    }
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
+                   
                     if(!isMobile)
                         game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
                     else
                         game = new Phaser.Game(600 * gameRatio, 600, Phaser.CANVAS, 'game');
                     game.state.add('Boot', BasicGame.Boot);
+                    //game.state.add('NanoImagen', BasicGame.NanoImagen);
                     game.state.add('Preloader', BasicGame.Preloader);
+
                     game.state.add('MainMenu', BasicGame.MainMenu);
                     game.state.add('SelectCar', BasicGame.SelectCar);
                     game.state.add('Niveles', BasicGame.Niveles);
                     game.state.add('Game', BasicGame.Game);
+                    game.state.add('Congratulation', BasicGame.Congratulation);
                     game.state.start('Boot');
                 }
             }
 
         </script>
 
-</body>
+    </body>
 
 </html>
