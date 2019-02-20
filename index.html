@@ -79,6 +79,33 @@
                 display: block;
             }
         }
+
+        /*
+
+            @media only screen 
+
+            and (max-width : 320px) {
+
+                    #changeOrientation {display: block;}
+
+            }
+
+
+
+
+
+            @media only screen 
+
+            and (min-device-width : 768px) 
+
+            and (max-device-width : 1024px) 
+
+            and (orientation : portrait) {
+
+                    #changeOrientation {display: block;}
+
+            }
+            */
     </style>
 
     <script src="src/phaser.min.js"></script>
@@ -135,7 +162,6 @@
                 var gameRatio = window.innerWidth / window.innerHeight; 
                 if (innerWidth > innerHeight && !juegoCargado) {
                     juegoCargado = true;
-                    console.log(definicion);
                     if(!isMobile)
                         game = new Phaser.Game(600 * gameRatio, 600, Phaser.AUTO, 'game');
                     else
